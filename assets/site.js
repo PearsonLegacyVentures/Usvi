@@ -16,4 +16,24 @@ result.innerHTML="<strong>Request delivered.</strong> Our concierge will review 
 }catch(error){result.innerHTML="The secure form could not confirm delivery. <strong>Your request has not been submitted.</strong> Use WhatsApp to send it directly to our concierge: <a id='bookingFallback' target='_blank' rel='noopener noreferrer'>Send request through WhatsApp</a>. You can also email <a href='mailto:info@massagebahamas.com'>info@massagebahamas.com</a>.";const link=result.querySelector("#bookingFallback");if(link)link.href=url;result.classList.add("show");submit.textContent=label;
 }finally{submit.disabled=false;result.scrollIntoView({block:"nearest",behavior:"smooth"});}
 });}
+
+// Tranquilitas brand consistency and restrained editorial motion.
+document.querySelectorAll(".brand strong").forEach(el=>{
+ const subtitle=el.querySelector("small");if(!subtitle)return;
+ const nameNode=[...el.childNodes].find(n=>n.nodeType===Node.TEXT_NODE);
+ if(nameNode)nameNode.textContent="Tranquilitas";
+ subtitle.textContent=country.toUpperCase()+" · PRIVATE MASSAGE";
+});
+if("IntersectionObserver" in window&&typeof Element.prototype.animate==="function"&&window.matchMedia("(prefers-reduced-motion: no-preference)").matches){
+ const items=document.querySelectorAll(".section .intro,.tile,.split-image,.split-copy,.location,.step,.coastal-interlude .interlude-copy,.coastal-interlude .interlude-photo");
+ const observer=new IntersectionObserver((entries,watcher)=>{
+  for(const entry of entries){
+   if(!entry.isIntersecting)continue;
+   entry.target.animate([{opacity:.8,transform:"translateY(12px)"},{opacity:1,transform:"translateY(0)"}],{duration:680,easing:"cubic-bezier(.18,.8,.2,1)",fill:"both"});
+   watcher.unobserve(entry.target);
+  }
+ },{threshold:.08,rootMargin:"0px 0px -24px 0px"});
+ items.forEach(el=>observer.observe(el));
+}
+
 })();
