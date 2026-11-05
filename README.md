@@ -15,3 +15,15 @@ The booking request form composes a message for the Tranquilitas WhatsApp concie
 ## SEO
 
 Pre-rendered static HTML for each service, location and article; canonical URLs, sitemap, robots.txt, and page-level structured data.
+
+## Cloudflare Pages production
+
+Project: usvi
+Production branch: main
+Custom domain: https://usvi.tranquilitasspa.com
+
+### Booking email provider
+For secure request delivery, configure production environment variables `RESEND_API_KEY` and `BOOKING_FROM_EMAIL` in this Cloudflare Pages project. The website shows an explicit WhatsApp/email fallback if the secure delivery service is unavailable; it never claims a request was delivered when it was not.
+
+### Safety and review
+All appointments are enquiries pending local provider coverage, applicable professional requirements, property access and confirmation. No payment is collected in the request form.
