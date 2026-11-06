@@ -34,3 +34,11 @@ h1,h2,h3{font-family:var(--serif);font-weight:800;letter-spacing:-.06em;line-hei
 /* Hero foreground contrast correction */
 .hero-content h1{color:#fff}
 .hero-content h1 em{color:#cff2e7}
+
+/* Tranquilitas regional booking estimate */
+.booking-guest-field input{width:100%;max-width:100%;min-height:47px;box-sizing:border-box}
+.booking-price-panel{background:#eaf3ee;color:#1b453d;border:1px solid #c9dfd3;padding:20px 22px;border-radius:17px}
+.booking-price-panel>strong{display:block;font-size:15px;letter-spacing:.025em}
+.booking-price-panel p{margin:8px 0;color:#305b4e}
+.booking-price-panel .booking-price-amount{font-size:clamp(18px,3vw,24px);font-weight:800;color:#154e43}
+.booking-price-panel small{font-size:12px;line-height:1.65;color:#4c6d60}
